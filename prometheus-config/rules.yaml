@@ -324,5 +324,5 @@ groups:
     record: "node:node_inodes_free:"
   - expr: 1 - (node_memory_MemAvailable_bytes{job="node-exporter"} / node_memory_MemTotal_bytes{job="node-exporter"})
     record: "instance:node_memory_utilisation:ratio"
-  - expr: instance:node_load1_per_cpu:ratio
-    record: (node_load1{job="node-exporter"} / instance:node_num_cpu:sum{job="node-exporter"})
+  - expr: (node_load1{job="node-exporter"} / instance:node_num_cpu:sum{job="node-exporter"})
+    record: "instance:node_load1_per_cpu:ratio"
