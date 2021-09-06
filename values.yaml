@@ -1,0 +1,23 @@
+
+
+storage:
+  enabled: true
+  className: default
+
+grafana:
+  enabled: true
+  ingress:
+    enabled: true
+    host: grafana.yechops.io
+
+prometheus:
+  enabled: true
+  ingress:
+    enabled: false
+    host: prometheus.yechops.io
+
+KubeStateMetrics:
+  enabled: true
+
+NodeExporter:
+  enabled: true
