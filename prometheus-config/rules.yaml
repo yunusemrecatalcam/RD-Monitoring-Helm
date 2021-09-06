@@ -322,3 +322,5 @@ groups:
         )
       ) by (node)
     record: "node:node_inodes_free:"
+  - expr: 1 - (node_memory_MemAvailable_bytes{job="node-exporter"} / node_memory_MemTotal_bytes{job="node-exporter"})
+    record: "instance:node_memory_utilisation:ratio"
