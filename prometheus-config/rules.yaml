@@ -326,3 +326,5 @@ groups:
     record: "instance:node_memory_utilisation:ratio"
   - expr: (node_load1{job="node-exporter"} / instance:node_num_cpu:sum{job="node-exporter"})
     record: "instance:node_load1_per_cpu:ratio"
+  - expr: count without(cpu) (count without(mode) (node_cpu_seconds_total{job="node-exporter"}))
+    record: "instance:node_num_cpu:sum"
