@@ -4,9 +4,8 @@ kind: Ingress
 metadata:
   name: {{ .Release.Name }}-grafana-ingress
   annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /
+    kubernetes.io/ingress.class: {{ .Values.ingress.classname }}
 spec:
-  ingressClassName: nginx
   rules:
   - host: {{ .Values.grafana.ingress.host }}
     http:

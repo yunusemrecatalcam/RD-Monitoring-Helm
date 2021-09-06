@@ -4,6 +4,9 @@ storage:
   enabled: true
   className: local-path
 
+ingress:
+  classname: traefik
+
 grafana:
   enabled: true
   ingress:
