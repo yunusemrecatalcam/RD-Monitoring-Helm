@@ -15,8 +15,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 56,
-  "iteration": 1626258293233,
+  "iteration": 1631015007628,
   "links": [],
   "panels": [
     {
@@ -66,7 +65,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.0.3",
+      "pluginVersion": "8.0.6",
       "targets": [
         {
           "exemplar": true,
@@ -126,7 +125,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.0.3",
+      "pluginVersion": "8.0.6",
       "targets": [
         {
           "exemplar": true,
@@ -186,7 +185,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.0.3",
+      "pluginVersion": "8.0.6",
       "targets": [
         {
           "exemplar": true,
@@ -246,7 +245,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.0.3",
+      "pluginVersion": "8.0.6",
       "targets": [
         {
           "exemplar": true,
@@ -391,7 +390,7 @@
       "options": {
         "showHeader": true
       },
-      "pluginVersion": "8.0.3",
+      "pluginVersion": "8.0.6",
       "targets": [
         {
           "exemplar": true,
@@ -463,32 +462,7 @@
           },
           "unit": "bytes"
         },
-        "overrides": [
-          {
-            "__systemRef": "hideSeriesFrom",
-            "matcher": {
-              "id": "byNames",
-              "options": {
-                "mode": "exclude",
-                "names": [
-                  "connect-6cbfc79cd9-cwmht"
-                ],
-                "prefix": "All except:",
-                "readOnly": true
-              }
-            },
-            "properties": [
-              {
-                "id": "custom.hideFrom",
-                "value": {
-                  "legend": false,
-                  "tooltip": false,
-                  "viz": true
-                }
-              }
-            ]
-          }
-        ]
+        "overrides": []
       },
       "gridPos": {
         "h": 8,
@@ -574,7 +548,7 @@
           }
         ]
       },
-      "pluginVersion": "8.0.3",
+      "pluginVersion": "8.0.6",
       "targets": [
         {
           "exemplar": true,
@@ -973,7 +947,7 @@
       {
         "allValue": null,
         "current": {
-          "selected": true,
+          "selected": false,
           "text": "default",
           "value": "default"
         },
@@ -1029,5 +1003,5 @@
   "timezone": "",
   "title": "Pod Metrics",
   "uid": "603gIFink",
-  "version": 16
+  "version": 1
 }
