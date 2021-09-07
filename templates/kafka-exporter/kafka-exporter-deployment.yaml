@@ -3,6 +3,9 @@ kind: Deployment
 metadata:
   name: kafka-exporter
 spec:
+  selector:
+    matchLabels:
+      k8s-app: kafka-exporter
   replicas: 1
   template:
     spec:
