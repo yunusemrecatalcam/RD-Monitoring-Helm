@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kafka-exporter
+spec:
+  replicas: 1
+  template:
+    spec:
+      containers:
+      - name: kafka-exporter
+        imagePullPolicy: IfNotPresent
+        image: danielqsj/kafka-exporter
+        args:
+          [ '--kafka.server=kafka:9092' ]
+        ports:
+        - name: http-metrics
+          containerPort: 9308
+          protocol: TCP
