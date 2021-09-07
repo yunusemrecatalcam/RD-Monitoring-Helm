@@ -8,6 +8,9 @@ spec:
       k8s-app: kafka-exporter
   replicas: 1
   template:
+    metadata:
+      labels:
+        k8s-app: kafka-exporter
     spec:
       containers:
       - name: kafka-exporter
