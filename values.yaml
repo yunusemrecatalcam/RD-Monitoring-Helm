@@ -2,22 +2,18 @@
 
 storage:
   enabled: true
-  className: local-path
+  className: default
 
 ingress:
-  classname: traefik
+  classname: alb
 
 grafana:
   enabled: true
   ingress:
     enabled: true
-    host: grafana.yechops.io
 
 prometheus:
   enabled: true
-  ingress:
-    enabled: false
-    host: prometheus.yechops.io
 
 KubeStateMetrics:
   enabled: true
