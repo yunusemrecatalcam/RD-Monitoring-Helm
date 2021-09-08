@@ -6,6 +6,11 @@ This helm chart includes
 - Kafka-exporter for kafka metrics
 - Prometheus scrape config to scrape spark master
 
+Installation
+```
+helm install -f values.yaml monitoring .
+```
+
 ### Things to configure on values.yaml
 - Change the storage:className,
 you can find your storageclass by running 
