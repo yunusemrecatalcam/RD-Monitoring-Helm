@@ -8,8 +8,7 @@ metadata:
     alb.ingress.kubernetes.io/scheme: internet-facing
 spec:
   rules:
-  - host: {{ .Values.grafana.ingress.host }}
-    http:
+  - http:
       paths:
       - path: /
         pathType: Prefix
