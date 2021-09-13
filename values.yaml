@@ -2,7 +2,7 @@
 
 storage:
   enabled: true
-  className: default
+  className: gp2
 
 ingress:
   classname: alb
