@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: api
-        image: {{ .Values.dashboard-api.image }}
+        image: {{ .Values.DashboardApi.image }}
         env:
           - name: PROM_URL
             value: {{ .Release.Name }}-prometheus:9090
