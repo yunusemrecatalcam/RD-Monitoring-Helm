@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: promapi
+spec:
+  selector:
+    matchLabels:
+      app: dashboard-api
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: dashboard-api
+    spec:
+      containers:
+      - name: api
+        image: {{ .Values.dashboard-api.image }}
+        env:
+          - name: PROM_URL
+            value: {{ .Release.Name }}-prometheus:9090
+        ports:
+          - containerPort: 80
+        imagePullPolicy: Always

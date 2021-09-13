@@ -20,3 +20,6 @@ KubeStateMetrics:
 
 NodeExporter:
   enabled: true
+
+dashboard-api:
+  image: yunusemrecatalcam/scrapesoup:promapi
