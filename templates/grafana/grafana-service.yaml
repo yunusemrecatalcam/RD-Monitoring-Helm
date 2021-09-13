@@ -8,7 +8,7 @@ metadata:
     app.kubernetes.io/name: {{ .Release.Name }}
     app.kubernetes.io/component: grafana
 spec:
-  type: NodePort
+  type: LoadBalancer #NodePort
   ports:
     # Routes port 80 to port 3000 of the Grafana StatefulSet Pods
     - name: http
