@@ -17,7 +17,7 @@ spec:
         image: {{ .Values.DashboardApi.image }}
         env:
           - name: PROM_URL
-            value: {{ .Release.Name }}-prometheus:9090
+            value: http://{{ .Release.Name }}-prometheus:9090
         ports:
           - containerPort: 80
         imagePullPolicy: Always
