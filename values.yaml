@@ -23,3 +23,6 @@ NodeExporter:
 
 DashboardApi:
   image: yunusemrecatalcam/scrapesoup:promapi
+
+KafkaExporter:
+  KafkaAddress: kafka:9092

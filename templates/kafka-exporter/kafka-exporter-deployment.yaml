@@ -17,7 +17,7 @@ spec:
         imagePullPolicy: IfNotPresent
         image: danielqsj/kafka-exporter:latest
         args:
-          [ '--kafka.server=kafka-svc:9092' ]
+          [ '--kafka.server='{{ .Values.KafkaExporter.KafkaAddress }}' ]
         ports:
         - name: http-metrics
           containerPort: 9308
