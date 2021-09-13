@@ -15,7 +15,7 @@ spec:
       containers:
       - name: kafka-exporter
         imagePullPolicy: IfNotPresent
-        image: danielqsj/kafka-exporter.v1.2.0
+        image: danielqsj/kafka-exporter:latest
         args:
           [ '--kafka.server=kafka-svc:9092' ]
         ports:
