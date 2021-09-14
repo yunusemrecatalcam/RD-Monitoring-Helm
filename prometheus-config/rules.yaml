@@ -330,3 +330,5 @@ groups:
     record: "instance:node_num_cpu:sum"
   - expr: sum by(cluster, namespace, pod, container) (irate(container_cpu_usage_seconds_total{image!=""}[5m])) * on(cluster, namespace, pod) group_left(node) topk by(cluster, namespace, pod) (1, max by(cluster, namespace, pod, node) (kube_pod_info{node!=""}))
     record: "node_namespace_pod_container:container_cpu_usage_seconds_total:sum_irate"
+  - expr: sum(rate(node_cpu_seconds_total{mode!="idle",mode!="iowait",mode!="steal"}[5m]))
+    record: "cluster:node_cpu:sum_rate5m"
