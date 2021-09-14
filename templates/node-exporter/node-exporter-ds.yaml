@@ -19,6 +19,10 @@ spec:
         k8s-app: node-exporter
     spec:
       serviceAccountName: node-exporter
+      tolerations:
+        - key: node-role.kubernetes.io/master
+          operator: Exists
+          effect: NoSchedule
       containers:
         - name: prometheus-node-exporter
           # Use the `quay.io/prometheus/node-exporter:v0.17.0` image
