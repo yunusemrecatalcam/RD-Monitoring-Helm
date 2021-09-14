@@ -1,16 +1,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: promapi
+  name: {{ .Release.Name }}-dashboard-api
+  labels:
+    k8s-app: dashboard-api
 spec:
   selector:
     matchLabels:
-      app: dashboard-api
+      k8s-app: dashboard-api
   replicas: 1
   template:
     metadata:
       labels:
-        app: dashboard-api
+        k8s-app: dashboard-api
     spec:
       containers:
       - name: api
@@ -19,5 +21,5 @@ spec:
           - name: PROM_URL
             value: http://{{ .Release.Name }}-prometheus:9090
         ports:
-          - containerPort: 80
+          - containerPort: 8000
         imagePullPolicy: Always

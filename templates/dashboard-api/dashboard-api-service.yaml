@@ -1,12 +1,13 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: dashboard-api-service
+  name: {{ .Release.Name }}-dashboard-api
 spec:
   type: LoadBalancer
   ports:
   - port: 8000
     targetPort: 8000
     name: http
+    protocol: TCP
   selector:
-    app: dashboard-api
+    k8s-app: dashboard-api
