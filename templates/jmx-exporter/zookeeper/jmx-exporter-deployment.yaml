@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jmx-exporter
+spec:
+  selector:
+    matchLabels:
+      k8s-app: jmx-exporter
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        k8s-app: jmx-exporter
+    spec:
+      containers:
+      - name: jmx-exporter
+        imagePullPolicy: IfNotPresent
+        image: bitnami/jmx-exporter:latest
+        ports:
+        - name: http-metrics
+          containerPort: 5556
+          protocol: TCP
+        volumeMounts:
+          - name: config-volume
+            mountPath: /opt/bitnami/jmx-exporter/example_configs
+      volumes:
+        - name: config-volume
+          configMap:
+            name: { { .Release.Name } }-jmx-exporter-config
