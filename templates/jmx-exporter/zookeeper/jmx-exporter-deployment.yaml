@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: { { .Release.Name } }-jmx-exporter
+  name: {{ .Release.Name }}-jmx-exporter
 spec:
   selector:
     matchLabels:
@@ -26,4 +26,4 @@ spec:
       volumes:
         - name: config-volume
           configMap:
-            name: { { .Release.Name } }-jmx-exporter-config
+            name: {{ .Release.Name }}-jmx-exporter-config
