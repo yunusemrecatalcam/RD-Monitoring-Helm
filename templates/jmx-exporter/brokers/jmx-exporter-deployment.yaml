@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: jmx-exporter-brokers
+  name: { { .Release.Name } }-jmx-exporter-brokers
 spec:
   selector:
     matchLabels:

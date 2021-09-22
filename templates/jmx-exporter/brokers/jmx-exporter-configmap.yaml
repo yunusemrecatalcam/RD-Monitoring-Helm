@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: jmx-exporter-config-brokers
+  name: { { .Release.Name } }-jmx-exporter-config-brokers
   labels:
     app.kubernetes.io/name: {{ .Release.Name }}
     app.kubernetes.io/component: jmx-exporter
