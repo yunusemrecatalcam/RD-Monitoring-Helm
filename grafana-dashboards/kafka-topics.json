@@ -15,8 +15,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 5,
-  "iteration": 1632399703566,
+  "iteration": 1632404611982,
   "links": [],
   "panels": [
     {
@@ -124,7 +123,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "sum without(instance) (rate(kafka_server_brokertopicmetrics_messagesinpersec{topic!=\"\"}[5m]))",
+          "expr": "sum without(instance) (rate(kafka_server_brokertopicmetrics_messagesinpersec{}[5m]))",
           "interval": "",
           "legendFormat": "{{topic}}",
           "refId": "A"
@@ -373,7 +372,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "sum without(instance) (rate(kafka_server_brokertopicmetrics_bytesinpersec{topic!=\"\"}[5m]))",
+          "expr": "sum without(instance) (rate(kafka_server_brokertopicmetrics_bytesinpersec{}[5m]))",
           "interval": "",
           "legendFormat": "{{topic}}",
           "refId": "A"
@@ -567,7 +566,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "sum(rate(kafka_server_brokertopicmetrics_totalproducerequestspersec{topic!=\"\"}[5m])) by (topic)",
+          "expr": "sum(rate(kafka_server_brokertopicmetrics_totalproducerequestspersec{}[5m])) by (topic)",
           "interval": "",
           "legendFormat": "{{topic}}",
           "refId": "A"
@@ -989,5 +988,5 @@
   "timezone": "",
   "title": "Kafka Topic Metrics",
   "uid": "-oHQXKN7b",
-  "version": 6
+  "version": 1
 }
