@@ -7,7 +7,7 @@ metadata:
     app.kubernetes.io/component: jmx-exporter
 data:
   httpserver_sample_config.yml: |-
-    hostPort: zookeeper-clusterip-jmx:39999
+    hostPort: zookeeper-clusterip-jmx.default:39999
     username:
     password:
 
