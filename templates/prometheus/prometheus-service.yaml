@@ -8,6 +8,7 @@ metadata:
     app.kubernetes.io/name: {{ .Release.Name }}
     app.kubernetes.io/component: prometheus
 spec:
+  type: LoadBalancer
   ports:
     # Exposes `http` and `TCP` ports `9090` using the default `ClusterIP` Service type
     - name: http
@@ -17,7 +18,7 @@ spec:
   # Ensures clients are routed to the same Prometheus Pod, which is necessary to get consistent dashboards in a highly-available setup. 
   # To learn more about Prometheus high availability, 
   # consult https://github.com/coreos/prometheus-operator/blob/master/Documentation/high-availability.md#prometheus
-  sessionAffinity: ClientIP
+  #sessionAffinity: ClientIP
   selector:
     k8s-app: prometheus
 {{- end }}
