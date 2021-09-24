@@ -25,4 +25,4 @@ DashboardApi:
   image: yunusemrecatalcam/scrapesoup:promapi
 
 KafkaExporter:
-  KafkaAddress: kafka:9092
+  KafkaAddress: kafka-svc.default:9092
