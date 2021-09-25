@@ -383,7 +383,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "sum(rate(node_cpu_seconds_total{mode!=\"idle\",mode!=\"iowait\"}[5m])) / count(sum(node_cpu_seconds_total) BY (instance, cpu))",
+          "expr": "sum(node:node_cpu_saturation_load1:)",
           "interval": "",
           "intervalFactor": 1,
           "legendFormat": "Cluster-cpu",
