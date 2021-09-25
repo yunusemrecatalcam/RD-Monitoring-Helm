@@ -304,7 +304,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "\n  (1 - rate(node_cpu_seconds_total{job=\"node-exporter\", mode=\"idle\", instance=\"$Node\"}[$__rate_interval]))\n/ ignoring(cpu) group_left\n  count without (cpu)( node_cpu_seconds_total{job=\"node-exporter\", mode=\"idle\", instance=\"$Node\"})\n",
+          "expr": "100 - (avg by (cpu) (rate(node_cpu_seconds_total{instance=\"$Node\", mode=\"idle\"}[1m])) * 100)",
           "format": "time_series",
           "interval": "",
           "intervalFactor": 2,
