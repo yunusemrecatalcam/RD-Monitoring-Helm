@@ -43,6 +43,9 @@ data:
     - job_name: 'kafka-exporter'
       static_configs:
         - targets: ['kafka-exporter:80']
+    - job_name: 'monitoring-jmx-exporter-client'
+      static_configs:
+        - targets: ['monitoring-jmx-exporter-client:5556']
     - job_name: 'monitoring-jmx-exporter-brokers'
       static_configs:
         - targets: ['monitoring-jmx-exporter-brokers:5556']
