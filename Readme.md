@@ -35,7 +35,7 @@ templates folder to keep the organized.
 
 ## Prometheus
 - Statefulset: This manifest includes the pod and volume 
-configurations for prometheus application
+configurations for Prometheus application
 - Service: k8s service for prometheus. Grafana and Dashboard API 
 uses that service to reach prometheus
 - Configmap: This helm template basically creates a configmap to
@@ -45,6 +45,23 @@ that configmap which we configure scraping targets.
 - ServiceAccount: Service account is used for allowing prometheus
 to fetch metrics from k8s API
 
+# Grafana
+- Statefulset: This manifest includes the pod and volume 
+configurations for Grafana application.
+- Service: Grafana service is for opening up the service to 
+the outside as a loadbalancer
+- Secret: This file is for defining user credential for grafana.
+You should put the credentials as base64 encoded like below.
+```
+admin-user: YWRtaW4=
+admin-password: aG9tZWdyb3du
+``` 
+- Configmap: We're setting prometheus as a datasource with the
+config files we defined inside that configmap.
+- Dashboards-configmap: This template basically iterates over 
+grafana-dashboard folder in this repo and print the json
+content. As we are mounting this configmap to the pod, our 
+default dashboards are being shown in the grafana automatically.
 
 
 
