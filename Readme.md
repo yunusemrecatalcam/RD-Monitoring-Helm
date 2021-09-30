@@ -34,6 +34,7 @@ We have all the components as a seperate folder placed in the
 templates folder to keep the organized.
 
 ## Prometheus
+Timeseries DB for storing all the metrics
 - Statefulset: This manifest includes the pod and volume 
 configurations for Prometheus application
 - Service: k8s service for prometheus. Grafana and Dashboard API 
@@ -46,6 +47,7 @@ that configmap which we configure scraping targets.
 to fetch metrics from k8s API
 
 # Grafana
+UI Component that fetchs and displays metrics from Prometheus
 - Statefulset: This manifest includes the pod and volume 
 configurations for Grafana application.
 - Service: Grafana service is for opening up the service to 
@@ -63,6 +65,17 @@ grafana-dashboard folder in this repo and print the json
 content. As we are mounting this configmap to the pod, our 
 default dashboards are being shown in the grafana automatically.
 
+# Node Exporter
+Linux server metrics exporter
+- ds (Daemonset): Daemonset object type makes us enable to deploy
+1 node exporter pod to every one of our nodes. We need that as 
+we need to monitor all the nodes we have. Configurations are 
+pretty similar with deployment/statefulset files. This daemonset
+file deploys our node exporter pods.
+
+
+
+ 
 
 
 
