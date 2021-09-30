@@ -73,6 +73,29 @@ we need to monitor all the nodes we have. Configurations are
 pretty similar with deployment/statefulset files. This daemonset
 file deploys our node exporter pods.
 
+# Kube State Metrics
+Kube state metrics collects metrics for k8s objects like pods, volumes
+- Deployment: Manifest for deploying kube state metrics.
+- Service: For prometheus to reach and scrape kube state metrics.
+
+# Kafka Exporter
+Directly connects kafka and exports metrics from it
+
+# JMX Exporter
+Brokers/Zookeeper is the same jmx deployments but configured to
+scrape different targets and metrics, one is for zookeeper,
+one is for brokers.
+- In the configmap files, the line 
+```
+hostPort: kafka-clusterip-jmx.default:39999
+``` 
+defines the jmx addresses for kafka, which we already opened 
+for kafka brokers/zookeepers and create an additional jmx
+service to point the jmx ports.
+- JMX exporter basically communicates with JVM and fetch the 
+metrics through that address.
+
+
 
 
  
