@@ -110,9 +110,15 @@ project to your image registry, and pass your image address
 to the values.yaml on helm chart.
 
 
+# Additional Material to understand monitoring architecture
+As monitoring is a pretty wide topic, one should read and 
+make their hands dirty to learn and get experience, feel free 
+to have a look at the links below. 
+- https://sysdig.com/blog/kubernetes-monitoring-prometheus/
+- https://prometheus.io/docs/introduction/overview/
 
-
- 
+Also check Dzone posts like below
+- https://dzone.com/articles/kubernetes-monitoring-using-prometheus 
 
 
 
