@@ -383,7 +383,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "sum(node:node_cpu_saturation_load1:)",
+          "expr": "avg(node:node_cpu_saturation_load1:)",
           "interval": "",
           "intervalFactor": 1,
           "legendFormat": "Cluster-cpu",
